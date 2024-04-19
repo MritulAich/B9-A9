@@ -5,20 +5,40 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import UpdateProfile from './components/routes/UpdateProfile';
+import UserProfile from './components/routes/UserProfile';
 import Root from './Root';
-import Slider from './components/header/Slider';
+import Home from './Home';
+import Community from './components/routes/Community';
+import Error from './components/Error';
+
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement:<Error></Error> ,
     children:[
       {
-        path: '/slider',
-        element: <Slider></Slider>
+        path: '/',
+        element: <Home></Home>
+      },
+      {
+        path: '/updateProfile',
+        element: <UpdateProfile></UpdateProfile>
+      },
+      {
+        path: '/userProfile',
+        element: <UserProfile></UserProfile>
+      },
+      {
+        path: '/community',
+        element:<Community></Community>
       }
     ]
   },
 ]);
+
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

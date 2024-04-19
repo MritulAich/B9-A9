@@ -2,7 +2,7 @@
 const Slider = () => {
 
   return (
-    <div className="text-center">
+  <div className="text-center my-8">
     <div className="carousel w-4/5">
       <div id="slide1" className="carousel-item relative w-fit">
         <img src="https://i.ibb.co/Fz8RsLh/caption.png" className="w-full" />
@@ -32,7 +32,8 @@ const Slider = () => {
           <a href="#slide1" className="btn btn-circle">❯</a>
         </div>
       </div>
-    </div></div>
+    </div>
+  </div>
   );
 };
 
