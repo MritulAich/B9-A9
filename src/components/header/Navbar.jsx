@@ -8,7 +8,7 @@ const Navbar = () => {
     </>
 
     return (
-        <div className="navbar bg-base-100 my-4 ">
+        <div className="navbar bg-base-100 my-4">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -18,7 +18,7 @@ const Navbar = () => {
         {navLinks}
       </ul>
     </div>
-    <a className="font-bold text-3xl">Imperial Villas</a>
+    <a className="font-bold lg:text-3xl md:text-2xl text-xl">Imperial Villas</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
