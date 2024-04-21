@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import { Helmet, HelmetProvider } from 'react-helmet-async';
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "./provider/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
@@ -31,6 +33,9 @@ const Register = () => {
       .then(res => { console.log(res.user)})
       .catch(err => { console.log(err) })
   }
+
+    const [showPassword, setShowPassword] = useState();
+
 
 
   return (
@@ -70,7 +75,17 @@ const Register = () => {
                   <label className="label">
                     <span className="label-text">Password :</span>
                   </label>
-                  <input type="password" name='password' placeholder="password" className="input input-bordered" required />
+                  <div className="flex flex-row items-center">
+                  <input 
+                  type={showPassword ? 'text' : 'password'} 
+                  name='password' placeholder="password" className="input input-bordered" required />
+                  
+                  <span onClick={()=>setShowPassword(!showPassword)}>
+                    {
+                      showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
+                    }
+                  </span>
+                  </div>
                 </div>
 
 

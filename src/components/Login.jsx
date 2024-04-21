@@ -4,10 +4,20 @@ import { useContext } from "react";
 import { AuthContext } from "./provider/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import { GoogleAuthProvider } from "firebase/auth/cordova";
+import { getAuth, signInWithPopup } from "firebase/auth";
+import app from "../../firebase.config";
 
 
 const Login = () => {
   const notify = () => toast.error('Oops! Infos are not matching');
+
+  const provider = new GoogleAuthProvider();
+  const auth = getAuth(app);
+  signInWithPopup(auth, provider)
+   .then(res=>{console.log(res.user)})
+   .catch(err=>{console.log(err)})
+
 
   const { signIn } = useContext(AuthContext);
 
@@ -57,15 +67,15 @@ const Login = () => {
                   <button className="btn btn-primary">Login</button>
                 </div>
 
-
-                <div> Sign in with <button className="text-blue-700">Google</button>
-                </div>
-                Or
-                <div>
-                  Continue with <button className="text-blue-700">Facebook</button>
-                </div>
                 <h2>New here? Please <Link to='/register' className="font-bold">Register</Link></h2>
               </form>
+
+              <div className="ml-6"> Sign in with <button onSubmit={signInWithPopup} className="text-blue-700">Google</button>
+                <p>Or</p></div>
+                
+                <div className="ml-6 mb-5">
+                  Continue with <button className="text-blue-700">Facebook</button>
+                </div>
             </div>
           </div>
         </div>
