@@ -11,7 +11,7 @@ import app from "../../firebase.config";
 const Login = () => {
   const notify = () => toast.error('Oops! Infos are not matching');
   
-
+  
   const { signIn, signInWithGoogle, signInWithGitHub } = useContext(AuthContext);
   const handleGoogle = ()=>{
     signInWithGoogle()
