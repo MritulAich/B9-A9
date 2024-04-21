@@ -1,8 +1,14 @@
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 const UpdateProfile = () => {
     return (
         <div>
-            it is up profile
+            <HelmetProvider>
+                <Helmet>
+                    <title>Profile Update</title>
+                </Helmet>
+                it is up profile
+            </HelmetProvider>
         </div>
     );
 };
