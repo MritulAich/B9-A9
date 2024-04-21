@@ -1,7 +1,29 @@
 import { Link } from "react-router-dom";
 import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { useContext } from "react";
+import { AuthContext } from "./provider/AuthProvider";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Login = () => {
+  const notify =()=>toast.error('Oops! Infos are not matching');
+
+  const {signIn} = useContext(AuthContext);
+
+  const handleLogin = e =>{
+    e.preventDefault();
+    const form = new FormData(e.currentTarget);
+    const email = form.get('email');
+    const password = form.get('password');
+
+    signIn(email, password)
+    .then(res=>{console.log(res.user)})
+    .catch(err => {
+      notify();
+    }) 
+  }
+
   return (
     <div>
       <HelmetProvider>
@@ -15,7 +37,7 @@ const Login = () => {
               <h1 className="text-4xl font-bold">Login now</h1>
             </div>
             <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-              <form className="card-body">
+              <form onSubmit={handleLogin} className="card-body">
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text">Email</span>
@@ -45,6 +67,7 @@ const Login = () => {
             </div>
           </div>
         </div>
+        <ToastContainer/>
       </HelmetProvider>
     </div>
   );

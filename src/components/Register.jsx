@@ -3,19 +3,31 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { useContext } from "react";
 import { AuthContext } from "./provider/AuthProvider";
 
-const Register = () => {
-  const {createUser} = useContext(AuthContext);
 
-  const handleRegister = e =>{
+const Register = () => {
+  const { createUser } = useContext(AuthContext);
+
+  const handleRegister = e => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const email = form.get('email');
     const password = form.get('password');
     console.log(email, password);
 
+    if(password.length < 6){
+      alert('Password must contain minimum 6 characters')
+    }
+    else if(!/[A-Z]/.test(password)){
+      alert('Password must contain at least one uppercase letter')
+    }
+    else if(!/[a-z]/.test(password)){
+      alert('Password must contain at least one lowercase letter');
+    }
+
+
     createUser(email, password)
-    .then(res =>{console.log(res.user)})
-    .catch(err =>{console.log(err)})
+      .then(res => { console.log(res.user) })
+      .catch(err => { console.log(err) })
   }
 
 
