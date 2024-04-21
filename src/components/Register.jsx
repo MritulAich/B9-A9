@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { useContext } from "react";
 import { AuthContext } from "./provider/AuthProvider";
-
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
@@ -23,10 +24,11 @@ const Register = () => {
     else if(!/[a-z]/.test(password)){
       alert('Password must contain at least one lowercase letter');
     }
+    else(toast('You have registered successfully'));
 
 
     createUser(email, password)
-      .then(res => { console.log(res.user) })
+      .then(res => { console.log(res.user)})
       .catch(err => { console.log(err) })
   }
 
@@ -82,6 +84,7 @@ const Register = () => {
             </div>
           </div>
         </div>
+        <ToastContainer/>
       </HelmetProvider>
     </div>
   );

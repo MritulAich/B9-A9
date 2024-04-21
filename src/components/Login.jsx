@@ -7,21 +7,23 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 const Login = () => {
-  const notify =()=>toast.error('Oops! Infos are not matching');
+  const notify = () => toast.error('Oops! Infos are not matching');
 
-  const {signIn} = useContext(AuthContext);
+  const { signIn } = useContext(AuthContext);
 
-  const handleLogin = e =>{
+  const handleLogin = e => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const email = form.get('email');
     const password = form.get('password');
 
     signIn(email, password)
-    .then(res=>{console.log(res.user)})
-    .catch(err => {
-      notify();
-    }) 
+      .then(res => {
+        console.log(res.user);
+        toast('You have logged in successfully');
+      }
+      )
+      .catch(err => {notify()})
   }
 
   return (
@@ -67,7 +69,7 @@ const Login = () => {
             </div>
           </div>
         </div>
-        <ToastContainer/>
+        <ToastContainer />
       </HelmetProvider>
     </div>
   );
