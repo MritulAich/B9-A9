@@ -1,0 +1,81 @@
+[
+    {
+      "image": "https://i.ibb.co/Nxj45MF/luxurious-beachfront-villa-with-private-pool-scenic-view-ocean-124507-109288.jpg",
+      "estate_title": "Luxurious Beachfront Villa",
+      "id": 1,
+      "segment_name": "Villa",
+      "description": "Experience luxury living in this stunning beachfront villa with breathtaking ocean views. This magnificent property features spacious living areas, state-of-the-art amenities, and direct access to pristine sandy beaches. Enjoy the ultimate coastal lifestyle.",
+      "price": "$500,000",
+      "status": "rent",
+      "area": "5000 sqft",
+      "location": "Malibu, California",
+      "facilities": ["Beachfront view", "Gym", "Pool"],
+      "button_text": "View Property"
+    },
+    {
+      "image": "https://i.ibb.co/6wHTXRN/18.jpg",
+      "estate_title": "Penthouse Paradise",
+      "id": 2,
+      "segment_name": "Penthouse",
+      "description": "Elevate your lifestyle in this luxurious penthouse offering panoramic city views and top-notch amenities. This exclusive property boasts modern design, spacious interiors, and access to premier dining and entertainment options.",
+      "price": "$3,500,000",
+      "status": "sale",
+      "area": "3000 sqft",
+      "location": "Manhattan, New York",
+      "facilities": ["City view", "Gym", "Spa"],
+      "button_text": "View Property"
+    },
+    {
+      "image": "https://i.ibb.co/W6py7c4/expediav2-684625-9521da-963498.jpg",
+      "estate_title": "Mountain Retreat",
+      "id": 3,
+      "segment_name": "Chalet",
+      "description": "Escape to this exquisite mountain chalet boasting unparalleled views and access to world-class skiing. This luxurious retreat features rustic charm, modern amenities, and proximity to Aspen's renowned ski slopes.",
+      "price": "$4,200,000",
+      "status": "sale",
+      "area": "4500 sqft",
+      "location": "Aspen, Colorado",
+      "facilities": ["Mountain view", "Skiing", "Hot tub"],
+      "button_text": "View Property"
+    },
+    {
+      "image": "https://cdn.thisiswhyimbroke.com/images/kudadoo-maldives-private-island-resort.jpg",
+      "estate_title": "Private Island Paradise",
+      "id": 4,
+      "segment_name": "Island",
+      "description": "Own your private slice of paradise on this exclusive island retreat with pristine beaches and tropical luxury. This extraordinary property offers unparalleled privacy, world-class amenities, and breathtaking views.",
+      "price": "$10,000,000",
+      "status": "sale",
+      "area": "10 acres",
+      "location": "Bora Bora, French Polynesia",
+      "facilities": ["Beachfront view", "Spa", "Yacht dock"],
+      "button_text": "View Property"
+    },
+    {
+      "image": "https://i.ibb.co/4m1SYkb/georgia-golf.jpg",
+      "estate_title": "Luxury Golf Estate",
+      "id": 5,
+      "segment_name": "Estate",
+      "description": "Indulge in the epitome of luxury living with this sprawling golf estate featuring stunning views and world-class amenities. This prestigious property offers elegant architecture, lush landscapes, and access to championship golf courses.",
+      "price": "$800,000",
+      "status": "rent",
+      "area": "8000 sqft",
+      "location": "Scottsdale, Arizona",
+      "facilities": ["Golf course view", "Gym", "Tennis courts"],
+      "button_text": "View Property"
+    },
+    {
+      "image": "https://i.ibb.co/vxxZ8Yy/f6a783b87c43c966342fb3ecf87788e2.png",
+      "estate_title": "Exquisite Lakeside Mansion",
+      "id": 6,
+      "segment_name": "Mansion",
+      "description": "Live in luxury in this magnificent lakeside mansion offering unparalleled elegance and tranquility. This prestigious estate features opulent interiors, manicured gardens, and stunning views of Lake Como, Italy, creating an idyllic retreat for discerning buyers.",
+      "price": "$1,250,000",
+      "status": "sale",
+      "area": "12,000 sqft",
+      "location": "Lake Como, Italy",
+      "facilities": ["Lake view", "Infinity pool", "Gardens"],
+      "button_text": "View Property"
+    }
+  ]
+  
