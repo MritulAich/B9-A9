@@ -27,7 +27,7 @@ const EstateDetails = () => {
                         <p className="text-lg">{estate.description.slice(90, 190)}</p>
                         <p className="text-lg mb-5">{estate.description.slice(190, 300)}</p>
 
-                        <div className="bg-base-100 rounded-xl p-5 mr-[450px]">
+                        <div className="bg-base-100 rounded-xl p-5 mr-[250px]">
                             <p className="text-xl font-bold text-lime-500 mb-2">{estate.price}</p>
                             <p className="font-medium">Area: {estate.area}</p>
                             <p>Location: {estate.location}</p>

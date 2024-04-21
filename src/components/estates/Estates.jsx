@@ -19,7 +19,7 @@ const Estates = () => {
                     See our properties below.</p>
             </div>
 
-            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
+            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
                 {
                     estates.map(estate => <div key={estate.id} >
                         <div className="card w-96 bg-base-100 shadow-xl p-8 space-y-4">
@@ -28,7 +28,7 @@ const Estates = () => {
                             <p className="text-lg">{estate.description.slice(0, 100)}....more</p>
                             <div className="flex flex-row justify-between">
                             <p className="text-xl font-bold text-lime-500">{estate.price}</p>
-                            <p>Status: <span className="text-xl font-semibold">{estate.status}</span></p>
+                            <p>Status: <span className="text-xl font-semibold text-red-500">{estate.status}</span></p>
                             </div>
                             <div className="text-center">
                               <Link to={`/estateDetails/${estate.id}`}><button className="btn btn-success">View property</button></Link>
