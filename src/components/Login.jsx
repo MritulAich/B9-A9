@@ -4,22 +4,28 @@ import { useContext } from "react";
 import { AuthContext } from "./provider/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-import { GoogleAuthProvider } from "firebase/auth/cordova";
-import { getAuth, signInWithPopup } from "firebase/auth";
+import { getAuth } from "firebase/auth";
 import app from "../../firebase.config";
 
 
 const Login = () => {
   const notify = () => toast.error('Oops! Infos are not matching');
+  
 
-  const provider = new GoogleAuthProvider();
-  const auth = getAuth(app);
-  signInWithPopup(auth, provider)
-   .then(res=>{console.log(res.user)})
-   .catch(err=>{console.log(err)})
+  const { signIn, signInWithGoogle, signInWithGitHub } = useContext(AuthContext);
+  const handleGoogle = ()=>{
+    signInWithGoogle()
+    .then(res=>{console.log(res.user)})
+    .catch(err=>{console.log(err)})
+  } 
 
 
-  const { signIn } = useContext(AuthContext);
+  const handleGitHub=()=>{
+    signInWithGitHub()
+    .then(res=>console.log(res.user))
+    .catch(err=>{console.log(err)})
+  }
+
 
   const handleLogin = e => {
     e.preventDefault();
@@ -33,8 +39,9 @@ const Login = () => {
         toast('You have logged in successfully');
       }
       )
-      .catch(err => {notify()})
+      .catch(err => {notify()}) 
   }
+
 
   return (
     <div>
@@ -70,11 +77,11 @@ const Login = () => {
                 <h2>New here? Please <Link to='/register' className="font-bold">Register</Link></h2>
               </form>
 
-              <div className="ml-6"> Sign in with <button onSubmit={signInWithPopup} className="text-blue-700">Google</button>
+              <div className="ml-6"> Sign in with <button onClick={handleGoogle} className="text-blue-700 btn">Google</button>
                 <p>Or</p></div>
                 
                 <div className="ml-6 mb-5">
-                  Continue with <button className="text-blue-700">Facebook</button>
+                  Continue with <button onClick={handleGitHub} className="text-blue-700 btn">GitHub</button>
                 </div>
             </div>
           </div>
