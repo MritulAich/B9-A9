@@ -7,7 +7,7 @@ const UpdateProfile = () => {
                 <Helmet>
                     <title>Profile Update</title>
                 </Helmet>
-                it is up profile
+                <h2 className='text-xl'>User can update their information here</h2>
             </HelmetProvider>
         </div>
     );

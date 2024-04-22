@@ -15,6 +15,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 import EstateDetails from './components/estates/EstateDetails';
 import AuthProvider from './components/provider/AuthProvider';
+import PrivateRoute from './components/routes/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -36,7 +37,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/community',
-        element: <Community></Community>
+        element: <PrivateRoute><Community></Community></PrivateRoute>
       },
       {
         path: '/login',

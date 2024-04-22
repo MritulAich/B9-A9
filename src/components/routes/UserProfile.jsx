@@ -6,7 +6,7 @@ const UserProfile = () => {
                 <Helmet>
                     <title>User Profile</title>
                 </Helmet>
-                it is user profile
+                <h2 className='text-xl'>All user information will display here</h2>
             </HelmetProvider>
         </div>
     );
